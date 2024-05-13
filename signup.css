@@ -33,7 +33,7 @@ td{
     align-items: center;
     justify-content: center;
 }
-.container,container2{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,10 +46,9 @@ td{
     color: white;
     border: 2px solid white;
 }
-.g_id_signin{
-    margin-top: 25px;
-    border-radius: 30%;
+.centre{
+    height: 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }

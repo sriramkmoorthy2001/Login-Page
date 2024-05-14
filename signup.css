@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 body{
+    height: 100vh;
+    width: 100%;
     background-color: black;
     color: white;
+    border: 2px solid white;
 }  
 .Sign-Up{
     font-size: 60px;
@@ -13,6 +16,7 @@ body{
     width: 100%;
     text-align: center;
     margin-top: 200px;    
+    font-family: Arial, Helvetica, sans-serif;
 }
 table{
     margin: 0 auto;
@@ -27,13 +31,15 @@ td{
     padding-bottom: 15px;
 }
 .lg-in{
-    height: 10vh;
+    height: 55px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .container{
+    height: 30px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,13 +47,19 @@ td{
 .submit{
     height: 45px;
     width: 80px;
-    border-radius: 50%;
+    border-radius: 30%;
     background-color: black;
     color: white;
     border: 2px solid white;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.submit:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px whitesmoke;
 }
 .centre{
-    height: 100px;
+    height: 85px;
     display: flex;
     align-items: center;
     justify-content: center;

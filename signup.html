@@ -11,10 +11,11 @@
     <section class="Sign-Up">Sign-Up</section>
     <section class="details">
       <table>
-        <tr>
+        <form action="" method="POST">
+          <tr>
           <td><label for="username">Username:</label></td>
           <td>
-            <input
+            <input 
               type="text"
               id="username"
               name="username"
@@ -39,6 +40,7 @@
             />
           </td>
         </tr>
+        </form>
       </table>
       <article class="lg-in">
         <h3>
@@ -47,41 +49,13 @@
         </h3>
       </article>
       <div class="container">
-         <button class="submit" onclick="signin()">Sign-In</button>
+        <button class="submit" onclick="signin()"  onclick="formvalidate()" >Sign-In</button>
       </div>      
     </section>
 
     <div id="buttonDiv" class="centre"></div> 
-    <iframe src="https://localhost:8080" allow="identity-credentials-get"></iframe>
 
-
-    <!-- Js code for Button  -->
-    <script>
-      var IdConfiguration = {
-      use_fedcm_for_prompt: true
-      };
-      function handleCredentialResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential);
-      }
-      window.onload = function () {
-        google.accounts.id.initialize({
-          client_id: "168701671651-vec2hrbifctua0slnq2i98vkemu8r5at.apps.googleusercontent.com",
-          callback: handleCredentialResponse
-        });
-        google.accounts.id.renderButton(
-          document.getElementById("buttonDiv"),
-          { theme: "outline", size: "large" ,width:"100px" ,shape:"pill" }  // customization attributes
-        );
-        google.accounts.id.prompt(); // also display the One Tap dialog
-      }
-      </script>
-      
-
-      <script async custom-element="amp-onetap-google" src="https://cdn.ampproject.org/v0/amp-onetap-google-0.1.js"></script> 
-
-
-
-
+    
     <script src="./signup.js"></script> 
   </body>
 </html>

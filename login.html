@@ -11,10 +11,12 @@
     <section class="Sign-Up">Login</section>
     <section class="details">
       <table>
-        <tr>
+        <form action="">
+          <tr>
           <td><label for="email">Email:</label></td>
           <td>
             <input type="email" id="email" name="email" placeholder="Email" />
+            <h1 id="warning2"></h1>
           </td>
         </tr>
         <tr>
@@ -26,16 +28,19 @@
               name="password"
               placeholder="Password"
             />
+            <h1 id="warning3"></h1>
           </td>
         </tr>
+        </form>
       </table>
       <div class="container">
-        <button class="submit" onclick="signin()">Login</button>
+        <button class="submit" onclick="formvalidate();">Login</button>
       </div>
     </section>
 
     <div id="buttonDiv" class="centre"></div>
+    <h1 id="warning"></h1>
 
-    <script src="./signup.js"></script>
+    <script src="./login.js"></script>
   </body>
 </html>

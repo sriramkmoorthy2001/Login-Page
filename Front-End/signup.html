@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,36 +13,26 @@
       <table>
         <form action="/submit" method="POST">
           <tr>
-          <td><label for="username">Username:</label></td>
-          <td>
-            <input 
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Username"
-            />
-            <h1 id="warning1"></h1>
-          </td>
-        </tr>
-        <tr>
-          <td><label for="email">Email:</label></td>
-          <td>
-            <input type="email" id="email2" name="email" placeholder="Email" />
-            <h1 id="warning2"></h1>
-          </td>
-        </tr>
-        <tr>
-          <td><label for="password">Password:</label></td>
-          <td>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-            />
-            <h1 id="warning3"></h1>
-          </td>
-        </tr>
+            <td><label for="username">Username:</label></td>
+            <td>
+              <input type="text" id="username" name="username" placeholder="Username" />
+              <h1 id="warning1"></h1>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td>
+              <input type="email" id="email2" name="email" placeholder="Email" />
+              <h1 id="warning2"></h1>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="password">Password:</label></td>
+            <td>
+              <input type="password" id="password" name="password" placeholder="Password" />
+              <h1 id="warning3"></h1>
+            </td>
+          </tr>
         </form>
       </table>
       <article class="lg-in">
@@ -52,12 +42,12 @@
         </h3>
       </article>
       <div class="container">
-        <button class="submit" onclick="formvalidate();">Sign-In</button>
-      </div>      
+        <button class="submit" onclick="formvalidate()">Sign-In</button>
+      </div>
     </section>
 
-    <div id="buttonDiv" class="centre"></div> 
+    <div id="buttonDiv" class="centre"></div>
     <h1 id="warning"></h1>
-    <script src="./signup.js"></script> 
+    <script src="./signup.js"></script>
   </body>
 </html>

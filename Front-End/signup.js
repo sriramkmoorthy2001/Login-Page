@@ -75,7 +75,7 @@ function formvalidate() {
     warning3.innerText = "";
 
   }
-  fetch("http://localhost:3000", {
+  fetch("http://localhost:3000/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -83,10 +83,11 @@ function formvalidate() {
     body: JSON.stringify({ username, email, password }),
   })
     .then((response) => response.json())
-    .then((json) => console.log(json))
     .then((json) => { 
       if (json.success) {
-        window.location.href = "home.html"
+        console.log(json)
+        window.location.href = "./Front-End/home.html"
+        console.log(json)
       } else {
         warning.innerText = "Failed to sign up. Please try again.";
         warning.style.color = "red";
@@ -101,7 +102,7 @@ function formvalidate() {
     });
 
   console.log(username);
-  console.log(email);
+  console.log(email);-
   console.log(password);
 
   return true;

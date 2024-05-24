@@ -34,24 +34,28 @@ app.post("/submit", async (req, res) => {
   const { username, email, password } = req.body;
   console.log(req.body);
 
-  // Hash the password
-  const hashedPassword = await bcrypt.hash(password, 10);
+  try {
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-  const query =
-    "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
-  const values = [username, email, hashedPassword];
+    const query = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
+    const values = [username, email, hashedPassword];
 
-  pool.query(query, values, (err, result) => {
-    if (err) {
-      console.error("Error executing query", err.stack);
-      return res
-        .status(500)
-        .json({ success: false, message: "Database error" });
-    }
-    res.json({ success: true, userData: { username, email, password } });
-    res.send('POST request received');
-  });
+    pool.query(query, values, (err, result) => {
+      if (err) {
+        console.error("Error executing query", err.stack);
+        return res.status(500).json({ success: false, message: "Database error" });
+      }
+      
+      console.log("User signed up successfully:", { username, email });
+      return res.status(200).json({ success: true, userData: { username, email } });
+    });
+  } catch (err) {
+    console.error("Error hashing password", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
 });
+
 
 // Start server
 const PORT = process.env.PORT || 3000;

@@ -49,29 +49,33 @@ function formvalidate() {
     warning.innerText = "PLEASE FILL THE REQUIRED FIELD";
     warning.style.color = "red";
     warning.style.textAlign = "center";
+    return false;
   } else if (username.length < 5 || username.length > 15) {
     warning1.innerText = "NAME'S CHARACTER SHOULD BE BEWTEEN 5 AND 15";
     warning1.style.color = "red";
     warning1.style.marginTop = "3px";
     warning1.style.fontSize = "10px";
+    return false;
   } else if (!emailRegex.test(email)) {
     warning2.innerText = "PLEASE ENTER THE EMAIL";
     warning2.style.color = "red";
     warning2.style.marginTop = "3px";
     warning2.style.fontSize = "10px";
+    return false;
   } else if (password.length < 8 || password.length > 15) {
     warning3.innerText = "PASSWORD MUST BE BETWEEN 8 TO 15 CHARACTERS!!!";
     warning3.style.color = "red";
     warning3.style.marginTop = "3px";
     warning3.style.fontSize = "10px";
+    return false;
   } else {
     warning.innerText = "";
     warning1.innerText = "";
-    warning2.innerText = " ";
+    warning2.innerText = "";
     warning3.innerText = "";
-  }
 
-  fetch("http://localhost:3000/submit", {
+  }
+  fetch("http://localhost:3000", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -79,9 +83,10 @@ function formvalidate() {
     body: JSON.stringify({ username, email, password }),
   })
     .then((response) => response.json())
-    .then((json) => {
+    .then((json) => console.log(json))
+    .then((json) => { 
       if (json.success) {
-        window.location.href = "home.html";
+        window.location.href = "home.html"
       } else {
         warning.innerText = "Failed to sign up. Please try again.";
         warning.style.color = "red";
@@ -98,7 +103,6 @@ function formvalidate() {
   console.log(username);
   console.log(email);
   console.log(password);
-  
-  return false;
 
+  return true;
 }

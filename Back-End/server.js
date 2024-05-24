@@ -29,6 +29,7 @@ pool.on("error", (err) => {
   console.error("Unexpected error on idle client", err);
   process.exit(-1);
 });
+
 app.post("/submit", async (req, res) => {
   const { username, email, password } = req.body;
   console.log(req.body);
@@ -48,6 +49,7 @@ app.post("/submit", async (req, res) => {
         .json({ success: false, message: "Database error" });
     }
     res.json({ success: true, userData: { username, email, password } });
+    res.send('POST request received');
   });
 });
 

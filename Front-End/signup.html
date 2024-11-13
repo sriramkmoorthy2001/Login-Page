@@ -10,42 +10,49 @@
   <body>
     <section class="Sign-Up">Sign-Up</section>
     <section class="details">
-      <table>
-        <form action="/submit" method="POST">
+        <table>
           <tr>
             <td><label for="username">Username:</label></td>
             <td>
-              <input type="text" id="username" name="username" placeholder="Username" />
+              <input
+                type="text"
+                id="name"
+                name="username"
+                placeholder="Username"
+              />
               <h1 id="warning1"></h1>
             </td>
           </tr>
           <tr>
             <td><label for="email">Email:</label></td>
             <td>
-              <input type="email" id="email2" name="email" placeholder="Email" />
+              <input type="email" id="mail" name="email" placeholder="Email" />
               <h1 id="warning2"></h1>
             </td>
           </tr>
           <tr>
             <td><label for="password">Password:</label></td>
             <td>
-              <input type="password" id="password" name="password" placeholder="Password" />
+              <input
+                type="password"
+                id="pass"
+                name="password"
+                placeholder="Password"
+              />
               <h1 id="warning3"></h1>
             </td>
           </tr>
-        </form>
-      </table>
+        </table>
+        <div class="container">
+          <button class="submit" type="submit" onclick=" return formvalidate()">Sign-In</button>
+        </div>
       <article class="lg-in">
         <h3>
           Do you have an account?
           <a href="./login.html" target="_self">Login</a>
         </h3>
       </article>
-      <div class="container">
-        <button class="submit" onclick="formvalidate()">Sign-In</button>
-      </div>
     </section>
-
     <div id="buttonDiv" class="centre"></div>
     <h1 id="warning"></h1>
     <script src="./signup.js"></script>
